@@ -9,8 +9,11 @@ const Home = ({ user }) => {
   const [answer, setAnswer] = useState(" ");
 
   function submit() {
-    if (answer == "House Assignment Lab") {
+    if (answer.toLowerCase() === " house assignment lab" || answer === " the dalton plan" || answer === " dalton plan") {
+      var audio = new Audio('celebration.mp3');
+      audio.play();
       alert("you win");
+  
     }
   }
 
@@ -23,7 +26,7 @@ const Home = ({ user }) => {
 
       <form onSubmit={submit}>
           <label>
-            Name:
+          Answer: 
             <input type="text" value={answer} onChange={(event)=>setAnswer(event.target.value)}/>
           </label>
           <input type="submit" />
